@@ -527,7 +527,8 @@
             const contentBytes = b64EncodeUnicode(JSON.stringify(cleanProducts, null, 2));
 
             try {
-                const url = `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${GITHUB_CONFIG.path}`;
+                const url = `https://corsproxy.io/?https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${GITHUB_CONFIG.path}`;
+                
                 const fileInfoRes = await fetch(url, {
                     headers: { "Authorization": `token ${GITHUB_CONFIG.token}` }
                 });
